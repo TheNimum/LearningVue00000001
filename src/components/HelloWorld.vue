@@ -1,11 +1,25 @@
 <template>
   <div class="hello">
-    <h1> Vue demo !  </h1>
-    <p>{{ exempel }}</p>
-    <button v-show="showButton" v-on:click="increase"> increase by 1 = {{i}}</button>
-    <button v-show="!showButton" v-on:click="decrease"> decrease by 1 = {{i}}</button>
-    <button v-show="testButton" v-on:click="doShowText"> show hidden text</button>
-    <p> {{doShowText ? testButton: ""}} </p>
+    
+    
+    <div class="btn-counter">
+      <h1> Click Counter </h1>
+      
+    <h2> {{ i }} </h2>
+    <button class="btn increase"
+     v-show="showButton"
+     v-on:click="increase">
+     + </button>
+    <button class="btn decrease"
+     v-show="showButton"
+     v-on:click="decrease">
+     - </button>
+    <button class="btn reset" v-show="resetCountButton" v-on:click="resetButton">
+      Reset button</button>
+      
+    </div>
+    
+
   </div>
 </template>
 
@@ -15,34 +29,27 @@ export default {
   name: 'HelloWorld',
   
   data: () => ({
-    exempel: 'detta är ett exempel på en data property.',
     showButton: true,
-    testButton: 'this is illuminated',
-    doshowText: true,
+    ShowText: true,
+    resetCountButton: true,
     i: 0, 
   }),
   methods: { 
 
-    doShowText() {
-      this.showText = false
+    resetButton() {
+      this.i = 0;
 
     },
     
     increase() { 
-      console.log('Inside increase');
+     
     this.i++
-    if(this.i === 10)
-    {
-      this.showButton = !this.doShowText
-    }
+    
     },
 
-    decrease() { console.log('Inside decrease');
+    decrease() { 
     this.i--
-    if(this.i === 0) // fixa denna så att den byter tillbaka till andra knappen .. .. .  
-    {
-      this.showButton = !this.showButton
-    }
+    
     },
   },
 }
@@ -50,8 +57,36 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+.btn-counter{
+  
+  background-color: rgb(168, 226, 226);
+  border:indigo;
+  border: dotted hotpink;
+  text-align: center;
+  margin:0px;
+  padding-bottom: 1em;
+  text-align: center;
+  border-radius: 1em;
+  
+}
+
+
+.btn{
+  background-color: gold;
+  justify-content: center;
+  margin-left: 15em;
+  border-radius: 10px;
+  font-size: 1.2em;
+  display: flex;
+  flex-direction: row;
+  width: 7em;
+}
+
+
+
 h3 {
-  margin: 40px 0 0;
+  margin: 40px;
 }
 ul {
   list-style-type: none;
