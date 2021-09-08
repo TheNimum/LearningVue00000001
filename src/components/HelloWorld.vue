@@ -64,25 +64,26 @@ export default {
   border:indigo;
   border: dotted hotpink;
   text-align: center;
-  margin:0px;
-  padding-bottom: 1em;
+  padding-bottom: 2em;
+  padding-top: 1em;
+  
   text-align: center;
   border-radius: 1em;
+  
+  
   
 }
 
 
 .btn{
-  background-color: gold;
-  justify-content: center;
-  margin-left: 15em;
+  font-size: 1em;
+  background-color: rgb(255, 255, 4);
+  padding:0.5em;
+  margin:0.1em;
+  border: groove rgb(33, 3, 71);
   border-radius: 10px;
-  font-size: 1.2em;
-  display: flex;
-  flex-direction: row;
-  width: 7em;
 }
-
+.btn:hover{ background-color: greenyellow;}
 
 
 h3 {
