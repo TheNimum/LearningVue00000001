@@ -75,7 +75,7 @@ export default {
 }
 
 
-.btn{
+.btn{  
   font-size: 1em;
   background-color: rgb(255, 255, 4);
   padding:0.5em;
