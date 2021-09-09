@@ -45,7 +45,7 @@ export default {
     nowYouSee: true,
     visible: true,
     secretText: 'You found me!',
-    
+
     i: 0, 
   }),
   computed: {
@@ -60,11 +60,8 @@ export default {
   
 
   methods: { 
-    revealButton(){
-      
+    revealButton(){ 
       this.visible = !this.visible;
-      this.buttontext = 'show';
-      
     },
     resetButton() {
       this.i = 0;
