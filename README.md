@@ -1,3 +1,6 @@
+
+https://github.com/TheNimum/LearningVue00000001/issues/1#issue-992190358
+
 # my-first-vue-app
 
 ## Project setup
