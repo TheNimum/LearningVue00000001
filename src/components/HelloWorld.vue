@@ -26,8 +26,7 @@
       <h2> Show the Hidden text: <span class="hiddenText" v-show="visible"> {{secretText}}</span> </h2>
       <button class="showAndHide" 
       v-show="nowYouSee" 
-      v-on:click="revealButton">
-        click to reveal </button>
+      v-on:click="revealButton"> {{buttontext}}</button>
     </div>
     
 
@@ -44,14 +43,28 @@ export default {
     ShowText: true,
     resetCountButton: true,
     nowYouSee: true,
-    visible: false,
+    visible: true,
     secretText: 'You found me!',
+    
     i: 0, 
   }),
+  computed: {
+    buttontext(){
+      if (this.visible) {
+        return 'hide text'
+        
+      }else
+      return 'show text'
+    }
+  },
+  
+
   methods: { 
     revealButton(){
       
       this.visible = !this.visible;
+      this.buttontext = 'show';
+      
     },
     resetButton() {
       this.i = 0;
