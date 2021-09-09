@@ -1,3 +1,6 @@
+
+![Vue-Träning](https://user-images.githubusercontent.com/70508714/132689453-2d79b6a6-50b5-4a14-ae19-b0aa9559b495.png)
+
 # my-first-vue-app
 
 ## Project setup
