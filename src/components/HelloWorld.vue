@@ -1,10 +1,9 @@
 <template>
   <div class="hello">
     
-    
+     <!-- en räknare som plus, minus och reset knapp  -->
     <div class="btn-counter">
       <h1> Click Counter </h1>
-      
     <h2> {{ i }} </h2>
     <button class="btn increase"
      v-show="showButton"
@@ -14,9 +13,21 @@
      v-show="showButton"
      v-on:click="decrease">
      - </button>
-    <button class="btn reset" v-show="resetCountButton" v-on:click="resetButton">
+    <button class="btn reset" 
+    v-show="resetCountButton" 
+    v-on:click="resetButton">
       Reset button</button>
-      
+    </div>
+    
+    
+      <!-- här vill jag göra en knapp som gör saker onsynlig eller synlig -->
+    <div class="HideAndShow">
+      <h1>Hide and Show Button</h1>
+      <h2> Show the Hidden text: <span class="hiddenText" v-show="visible"> {{secretText}}</span> </h2>
+      <button class="showAndHide" 
+      v-show="nowYouSee" 
+      v-on:click="revealButton">
+        click to reveal </button>
     </div>
     
 
@@ -32,24 +43,24 @@ export default {
     showButton: true,
     ShowText: true,
     resetCountButton: true,
+    nowYouSee: true,
+    visible: false,
+    secretText: 'You found me!',
     i: 0, 
   }),
   methods: { 
-
+    revealButton(){
+      
+      this.visible = !this.visible;
+    },
     resetButton() {
       this.i = 0;
-
-    },
-    
+    }, 
     increase() { 
-     
     this.i++
-    
     },
-
     decrease() { 
-    this.i--
-    
+    this.i--  
     },
   },
 }
@@ -57,7 +68,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.HideAndShow{
+  font-size: 15px;
+  border: maroon;
+  padding: 0.5em;
+  margin: 1em;
+  border:dotted black;
+  background: crimson;
+  
+}
 .btn-counter{
   
   background-color: rgb(168, 226, 226);
