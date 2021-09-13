@@ -1,14 +1,10 @@
 <template>
   <div class="hello">
-    
-     
-    
-    
-    
+
       <!-- här vill jag göra en knapp som gör saker onsynlig eller synlig -->
     <div class="HideAndShow">
       <h1>Hide and Show Button</h1>
-      <h2> Show the Hidden text: <span class="hiddenText" v-show="visible"> {{secretText}}</span> </h2>
+      <h2> Show the Hidden text: <span id="hiddenText" v-show="!visible"> {{secretText}}</span> </h2>
       <button class="showAndHide" 
       v-show="nowYouSee" 
       v-on:click="revealButton"> {{buttontext}}</button>
@@ -36,27 +32,22 @@ export default {
   computed: {
     buttontext(){
       if (this.visible) {
-        return 'hide text'
+        return 'show text'
         
       }else
-      return 'show text'
+      return 'hide text'
     }
   },
   
 
   methods: { 
-    revealButton(){ 
+    revealButton()
+    { 
       this.visible = !this.visible;
+       document.getElementById("hiddenText").classList.add("special")
     },
-    resetButton() {
-      this.i = 0;
-    }, 
-    increase() { 
-    this.i++
-    },
-    decrease() { 
-    this.i--  
-    },
+    
+    
   },
 }
 </script>
@@ -72,8 +63,13 @@ export default {
   background: crimson;
   
 }
+.special{
+  background: yellow;
+  color: blue;
+  border-radius: 5px;
+  
 
-
+}
 
 h3 {
   margin: 40px;

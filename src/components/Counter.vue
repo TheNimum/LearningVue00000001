@@ -28,9 +28,7 @@ export default ({
 		i: 0,
 	}),
 	methods: {
-	revealButton(){ 
-    this.visible = !this.visible;
-    },
+	
     resetButton() {
     this.i = 0;
     }, 
@@ -61,8 +59,8 @@ export default ({
 .btn{  
   font-size: 1em;
   background-color: rgb(255, 255, 4);
-  padding:0.5em;
-  margin:0.1em;
+  padding:1em;
+  margin:0.6em;
   border: groove rgb(33, 3, 71);
   border-radius: 10px;
 }
